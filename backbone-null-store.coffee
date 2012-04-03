@@ -7,7 +7,7 @@ do ->
   infect = (Backbone) ->
     _oldBackboneSync = Backbone.sync
     Backbone.sync = (method, model, options) ->
-      unless model.nullStore or model.model?.prototype.nullStore
+      unless model.nullStore or model.collection?.nullStore or model.model?.prototype.nullStore
         return _oldBackboneSync.call @, method, model, options
       else
         switch method
