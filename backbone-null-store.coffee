@@ -1,7 +1,5 @@
 ###
 backbone-null-store - saves to /dev/null
-Copyright Benjie Gillam 2012
-Licence: WTFPL v2 or later
 ###
 do ->
   infect = (Backbone) ->
@@ -22,7 +20,10 @@ do ->
             options.success model
           when "delete"
             options.success model
+        return
+    return
   if exports?
     exports.infect = infect
   else
     infect(Backbone)
+  return
